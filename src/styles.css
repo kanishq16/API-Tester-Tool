@@ -17,3 +17,14 @@ button.primary:disabled{opacity:.6;cursor:wait}
 .tab.on{color:var(--text);border-color:var(--accent)}
 .row{display:flex;gap:6px;margin-bottom:6px}
 .row input{flex:1;min-width:0}
+textarea{width:100%;min-height:160px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;resize:vertical}
+pre{margin:0;white-space:pre-wrap;word-break:break-word;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:460px;overflow:auto;background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:10px}
+.meta{display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-size:14px;color:var(--muted)}
+.meta b{font-size:16px}
+.s2{color:var(--ok)}.s3{color:var(--warn)}.s4,.s5,.serr{color:var(--err)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td{padding:4px 8px;border-bottom:1px solid var(--line);vertical-align:top;word-break:break-all}
+td:first-child{color:var(--muted);width:32%}
+.hist{display:flex;flex-direction:column;gap:4px;margin-top:8px}
+.hist button{text-align:left;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hint{color:var(--muted);font-size:13px;margin:6px 0 0}
