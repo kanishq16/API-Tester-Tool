@@ -17,3 +17,28 @@ export function buildRequest({ method, url, headers, body, auth }) {
   }
   return { method, url: url.trim(), headers: hs, body: hasBody ? body : undefined };
 }
+export function toCurl(q) {
+  const esc = (s) => "'" + String(s).replace(/'/g, "'\\''") + "'";
+  let c = `curl -X ${q.method} ${esc(q.url)}`;
+  for (const k in q.headers) c += ` \\\n  -H ${esc(`${k}: ${q.headers[k]}`)}`;
+  if (q.body) c += ` \\\n  -d ${esc(q.body)}`;
+  return c;
+}
+
+const KEY = "api-tester-history";
+
+export function loadHistory() {
+  try {
+    return JSON.parse(localStorage.getItem(KEY) || "[]");
+  } catch {
+    return [];
+  }
+}
+
+export function saveHistory(items) {
+  try {
+    localStorage.setItem(KEY, JSON.stringify(items));
+  } catch {
+    /* storage unavailable */
+  }
+}
