@@ -15,4 +15,15 @@ export default function AuthEditor({ auth, onChange }) {
           value={auth.a}
           onChange={(e) => set({ a: e.target.value })}
         />
+      )} {auth.type === "basic" && (
+        <input
+          className="grow"
+          type="password"
+          placeholder="Password"
+          value={auth.b}
+          onChange={(e) => set({ b: e.target.value })}
+        />
       )}
+    </div>
+  );
+}
